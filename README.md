@@ -109,3 +109,52 @@ This line calls the `listFiles` function, triggering the file reading and loggin
 ## Usage
 
 This script is a practical example of how to list files in a directory using Node.js, and it allows the directory to be specified via command-line argument. The code can be modified to work with different directories or to perform more complex operations on the listed files. Note that this script requires Node.js and its File System module to run.
+
+# End -- ls2.js
+
+# Begin -- app.js
+
+## Overview
+
+The given JavaScript code uses Node.js's built-in `http` module to create a simple HTTP server. When accessed, the server responds with a plain text message "Hello, World!".
+
+## Code Breakdown
+
+### Module Import
+
+```javascript
+const http = require('http');
+```
+
+The `http` module is imported using Node.js's `require` function. This module includes functions for creating HTTP clients and servers.
+
+### HTTP Server Creation
+
+```javascript
+http.createServer(function (req, res) {
+    res.writeHead(200, {"Content-Type": 'text/plain'});
+    res.end('Hello, World!\n');
+}).listen(8124, '127.0.0.1');
+```
+
+- `http.createServer()` is a method that creates an HTTP server. It takes a request listener function as a parameter. This function is automatically added to the `'request'` event and is invoked each time the server gets a request.
+
+- The request listener function has two parameters: `req` (the request object) and `res` (the response object).
+
+- `res.writeHead(200, {"Content-Type": 'text/plain'});` sends a response header to the request. `200` is the HTTP status code for "OK", and the `Content-Type` of `text/plain` indicates the data being sent back to the client is plain text.
+
+- `res.end('Hello, World!\n');` ends the response process, and optionally, sends a data string. Here, it sends a "Hello, World!" message.
+
+- The `listen()` method makes the server listen at the specified IP address and port. In this case, it's `127.0.0.1` (localhost) and port `8124`.
+
+### Server Status Message
+
+```javascript
+console.log("Server running at http://127.0.0.1:8124");
+```
+
+This line prints a message to the console indicating that the server is running and listening for incoming requests at the provided address and port.
+
+## Usage
+
+This is a simple example of how to create a basic HTTP server using Node.js. It can be a starting point for more complex servers, where you might handle different types of requests, serve different content types, or interact with a database. Please note that you'll need to have Node.js installed to run this script.
